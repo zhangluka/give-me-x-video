@@ -265,8 +265,8 @@ function renderResults(data) {
 
       // download button
       const dlBtn = document.createElement('button');
-      dlBtn.className = 'primary-btn';
-      dlBtn.innerHTML = '⬇ Download';
+      dlBtn.className = 'btn-primary';
+      dlBtn.innerHTML = '<span class="btn-text"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</span>';
       dlBtn.dataset.videoUrl = item.url;
 
       dlBtn.addEventListener('click', () => {
@@ -278,7 +278,7 @@ function renderResults(data) {
 
       // copy link button
       const copyBtn = document.createElement('button');
-      copyBtn.className = 'secondary-btn';
+      copyBtn.className = 'btn-secondary';
       copyBtn.textContent = 'Copy Link';
       copyBtn.addEventListener('click', async () => {
         try {
@@ -297,8 +297,8 @@ function renderResults(data) {
       var downloadPrimary = dlBtn;
     } else if (item.type === 'photo') {
       const dlBtn = document.createElement('button');
-      dlBtn.className = 'primary-btn';
-      dlBtn.innerHTML = '⬇ Save Image';
+      dlBtn.className = 'btn-primary';
+      dlBtn.innerHTML = '<span class="btn-text"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Save Image</span>';
       dlBtn.addEventListener('click', () => {
         window.open(item.url, '_blank');
       });
