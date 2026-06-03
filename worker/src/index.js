@@ -387,6 +387,18 @@ async function handleProxy(request) {
   });
 }
 
+// ─── JSON Response Helper ─────────────────────────────────────
+
+function jsonResponse(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      ...CORS_HEADERS,
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
 // ─── Router ───────────────────────────────────────────────────
 
 export default {

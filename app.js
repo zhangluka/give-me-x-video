@@ -6,7 +6,8 @@ const $ = (sel) => document.querySelector(sel);
 
 // ─── State ─────────────────────────────────────────────────
 
-let apiBase = localStorage.getItem('xdown_api') || '';
+const DEFAULT_API = 'https://give-me-x-video.zhangluuka.workers.dev';
+let apiBase = localStorage.getItem('xdown_api') || DEFAULT_API;
 let currentResults = null;
 
 // ─── DOM ───────────────────────────────────────────────────
