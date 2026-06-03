@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Give Me X Video</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📹</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <span class="logo-icon">📹</span>
+        <h1>Give Me X Video</h1>
+      </div>
+      <p class="tagline">Paste link. Get video. Done.</p>
+    </header>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <div class="input-wrapper">
+        <input
+          type="url"
+          id="url-input"
+          placeholder="Paste X / Twitter video link here..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button id="paste-btn" class="icon-btn" title="Paste from clipboard">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+        <button id="download-btn" class="primary-btn">
+          <span class="btn-text">Download</span>
+          <span class="btn-loading" style="display:none">
+            <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4" stroke-dashoffset="10"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Error Message -->
+    <div id="error-msg" class="error-msg" style="display:none"></div>
+
+    <!-- Results Section -->
+    <section id="results" class="results" style="display:none">
+      <!-- Tweet Info -->
+      <div id="tweet-info" class="tweet-info" style="display:none">
+        <span class="tweet-author"></span>
+        <p class="tweet-text"></p>
+      </div>
+
+      <!-- Media Grid -->
+      <div id="media-grid" class="media-grid"></div>
+    </section>
+
+    <!-- Config Section (collapsed) -->
+    <details class="config-section">
+      <summary>Settings</summary>
+      <div class="config-content">
+        <label>
+          API Worker URL
+          <input type="url" id="api-url" placeholder="https://your-worker.workers.dev">
+        </label>
+        <p class="config-hint">Deploy your own Cloudflare Worker, then paste the URL here.</p>
+      </div>
+    </details>
+
+    <!-- Footer -->
+    <footer>
+      <p>Built for personal use. No tracking, no ads.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
